@@ -166,7 +166,7 @@ const Solutions = () => {
                 <ul className="space-y-2">
                   {client.benefits.map((benefit, idx) => (
                     <li key={idx} className="flex items-start space-x-2 text-xs md:text-sm text-gray-700">
-                      <CheckCircle2 className="h-4 w-4 text-water-dark flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-3 w-3 md:h-4 md:w-4 text-water-dark flex-shrink-0 mt-0.5" />
                       <span>{benefit}</span>
                     </li>
                   ))}
@@ -216,7 +216,7 @@ const Solutions = () => {
                 <ul className="space-y-2">
                   {system.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start space-x-2 text-xs md:text-sm">
-                      <CheckCircle2 className={`h-4 w-4 flex-shrink-0 mt-0.5 ${system.highlight ? 'text-cyan-200' : 'text-water-dark'}`} />
+                      <CheckCircle2 className={`h-3 w-3 md:h-4 md:w-4 flex-shrink-0 mt-0.5 ${system.highlight ? 'text-cyan-200' : 'text-water-dark'}`} />
                       <span className={system.highlight ? 'text-gray-100' : 'text-gray-700'}>{feature}</span>
                     </li>
                   ))}
@@ -240,8 +240,8 @@ const Solutions = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {whatsIncluded.map((component, index) => (
               <div key={index} className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle2 className="h-6 w-6 text-water-dark flex-shrink-0 mt-1" />
+                <div className="flex items-start space-x-2 md:space-x-3">
+                  <CheckCircle2 className="h-5 w-5 md:h-6 md:w-6 text-water-dark flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1">{component.item}</h4>
                     <p className="text-xs md:text-sm text-gray-600">{component.desc}</p>
@@ -267,7 +267,7 @@ const Solutions = () => {
             {packages.map((pkg, index) => (
               <div
                 key={index}
-                className={`rounded-2xl p-8 ${
+                className={`rounded-2xl p-6 md:p-8 ${
                   pkg.popular
                     ? 'bg-gradient-to-br from-cyan-500 to-blue-600 transform scale-105 shadow-2xl border-4 border-yellow-400'
                     : 'bg-white/10 backdrop-blur-sm'
@@ -286,7 +286,7 @@ const Solutions = () => {
                 <ul className="space-y-3 mb-8">
                   {pkg.includes.map((item, idx) => (
                     <li key={idx} className="flex items-start space-x-2">
-                      <CheckCircle2 className="h-5 w-5 text-cyan-200 flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-cyan-200 flex-shrink-0 mt-0.5" />
                       <span className="text-xs md:text-sm">{item}</span>
                     </li>
                   ))}
@@ -319,14 +319,14 @@ const Solutions = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="inline-flex items-center bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-cyan-200 transition-colors group"
+              className="inline-flex items-center bg-white text-blue-900 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-cyan-200 transition-colors group"
             >
               Schedule Free Inspection
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               to="/calculator"
-              className="inline-flex items-center bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-white hover:text-blue-900 transition-colors"
+              className="inline-flex items-center bg-transparent border-2 border-white text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-white hover:text-blue-900 transition-colors"
             >
               Calculate Savings
             </Link>

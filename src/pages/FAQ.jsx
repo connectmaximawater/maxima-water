@@ -186,13 +186,13 @@ const FAQ = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="inline-block bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-cyan-200 transition-colors"
+              className="inline-block bg-white text-blue-900 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-cyan-200 transition-colors"
             >
               Contact Us
             </a>
             <a
               href="tel:+916300225335"
-              className="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-white hover:text-blue-900 transition-colors"
+              className="inline-block bg-transparent border-2 border-white text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-white hover:text-blue-900 transition-colors"
             >
               📞 Call: +91 6300 225 335 (24/7)
             </a>

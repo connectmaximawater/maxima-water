@@ -121,11 +121,11 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 to="/contact"
-                className="bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-cyan-200 transition-all duration-300 shadow-lg flex items-center group"
+                className="bg-white text-blue-900 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-cyan-200 transition-all duration-300 shadow-lg flex items-center group"
               >
-                <Phone className="mr-2 h-5 w-5" />
+                <Phone className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                 Get Free Site Inspection
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               {/* <Link
                 to="/calculator"
@@ -155,7 +155,7 @@ const Home = () => {
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-100 hover:border-water-light group"
+                className="bg-gradient-to-br from-gray-50 to-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-100 hover:border-water-light group"
               >
                 <div className="text-water-dark mb-4 group-hover:scale-110 transition-transform duration-300">
                   {benefit.icon}
@@ -182,14 +182,14 @@ const Home = () => {
             {howItWorksSteps.map((item, index) => (
               <div key={index} className="flex items-center">
                 <div className="text-center">
-                  <div className="bg-white rounded-full w-32 h-32 flex flex-col items-center justify-center shadow-lg border-4 border-water-light">
+                  <div className="bg-white rounded-full w-24 h-24 md:w-32 md:h-32 flex flex-col items-center justify-center shadow-lg border-2 md:border-4 border-water-light">
                     <div className="text-4xl md:text-5xl mb-2">{item.icon}</div>
                     <div className="text-xs md:text-sm font-bold text-gray-900">{item.step}</div>
                   </div>
                   <p className="text-xs md:text-sm text-gray-600 mt-2 max-w-[120px]">{item.desc}</p>
                 </div>
                 {index < howItWorksSteps.length - 1 && (
-                  <ArrowRight className="h-8 w-8 text-water-dark mx-2 hidden md:block" />
+                  <ArrowRight className="h-6 w-6 md:h-8 md:w-8 text-water-dark mx-2 hidden md:block" />
                 )}
               </div>
             ))}
@@ -201,7 +201,7 @@ const Home = () => {
               className="inline-flex items-center text-water-dark font-semibold text-sm md:text-lg hover:text-water-light transition-colors"
             >
               Learn More About The Process
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
             </Link>
           </div>
         </div>
@@ -223,7 +223,7 @@ const Home = () => {
             {solutions.map((solution, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
+                className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
               >
                 <div className="text-5xl md:text-6xl mb-4 text-center">{solution.image}</div>
                 <h3 className="text-sm md:text-lg font-semibold text-gray-900 mb-3 text-center">{solution.title}</h3>
@@ -234,7 +234,7 @@ const Home = () => {
                     className="text-water-dark font-semibold hover:text-water-light transition-colors inline-flex items-center"
                   >
                     Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-3 w-3 md:h-4 md:w-4" />
                   </Link>
                 </div>
               </div>
@@ -259,9 +259,9 @@ const Home = () => {
             {whyChooseUs.map((reason, index) => (
               <div
                 key={index}
-                className="flex items-start space-x-4 bg-white/10 backdrop-blur-sm p-6 rounded-xl"
+                className="flex items-start space-x-3 md:space-x-4 bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-xl"
               >
-                <CheckCircle2 className="h-5 w-5 text-cyan-200 flex-shrink-0 mt-1" />
+                <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-cyan-200 flex-shrink-0 mt-1" />
                 <span className="text-xs md:text-sm text-gray-100">{reason}</span>
               </div>
             ))}
@@ -283,7 +283,7 @@ const Home = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -314,17 +314,17 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-cyan-200 transition-all duration-300 shadow-lg group"
+                className="inline-flex items-center bg-white text-blue-900 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-cyan-200 transition-all duration-300 shadow-lg group"
               >
-                <Phone className="mr-2 h-5 w-5" />
+                <Phone className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                 Book Free Site Visit
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
                 href="https://wa.me/916300225335"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center bg-green-500 text-white px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-green-600 transition-all duration-300 shadow-lg"
+                className="inline-flex items-center bg-green-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-green-600 transition-all duration-300 shadow-lg"
               >
                 WhatsApp Us
               </a>

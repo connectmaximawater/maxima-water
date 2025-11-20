@@ -62,7 +62,7 @@ const Navbar = () => {
             className="md:hidden text-gray-900 p-2 hover:bg-gray-100 rounded-lg transition-colors"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-5 w-5 md:h-6 md:w-6" /> : <Menu className="h-5 w-5 md:h-6 md:w-6" />}
           </button>
         </div>
       </div>
@@ -88,7 +88,7 @@ const Navbar = () => {
                   className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
                   aria-label="Close menu"
                 >
-                  <X className="h-7 w-7 text-gray-900 font-bold" />
+                  <X className="h-6 w-6 md:h-7 md:w-7 text-gray-900 font-bold" />
                 </button>
               </div>
               

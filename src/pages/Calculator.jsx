@@ -128,7 +128,7 @@ const Calculator = () => {
                   name="propertyType"
                   value={formData.propertyType}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-water-dark focus:outline-none"
+                  className="w-full px-3 md:px-4 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-water-dark focus:outline-none"
                 >
                   <option value="house">Individual House</option>
                   <option value="apartment">Apartment Complex</option>
@@ -145,7 +145,7 @@ const Calculator = () => {
                   name="city"
                   value={formData.city}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-water-dark focus:outline-none"
+                  className="w-full px-3 md:px-4 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-water-dark focus:outline-none"
                 >
                   {cities.map(city => (
                     <option key={city.name} value={city.name.toLowerCase()}>
@@ -158,7 +158,7 @@ const Calculator = () => {
               {/* Roof Area */}
               <div>
                 <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
-                  <Home className="inline h-4 w-4 mr-1" />
+                  <Home className="inline h-3 w-3 md:h-4 md:w-4 mr-1" />
                   Roof/Collection Area (sq ft)
                 </label>
                 <input
@@ -167,14 +167,14 @@ const Calculator = () => {
                   value={formData.roofArea}
                   onChange={handleChange}
                   placeholder="e.g., 2000"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-water-dark focus:outline-none"
+                  className="w-full px-3 md:px-4 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-water-dark focus:outline-none"
                 />
               </div>
 
               {/* Number of Residents */}
               <div>
                 <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
-                  <Users className="inline h-4 w-4 mr-1" />
+                  <Users className="inline h-3 w-3 md:h-4 md:w-4 mr-1" />
                   Number of Residents
                 </label>
                 <input
@@ -183,14 +183,14 @@ const Calculator = () => {
                   value={formData.residents}
                   onChange={handleChange}
                   placeholder="e.g., 4"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-water-dark focus:outline-none"
+                  className="w-full px-3 md:px-4 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-water-dark focus:outline-none"
                 />
               </div>
 
               {/* Current Monthly Bill */}
               <div>
                 <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
-                  <IndianRupee className="inline h-4 w-4 mr-1" />
+                  <IndianRupee className="inline h-3 w-3 md:h-4 md:w-4 mr-1" />
                   Current Monthly Water Bill (₹)
                 </label>
                 <input
@@ -199,7 +199,7 @@ const Calculator = () => {
                   value={formData.currentBill}
                   onChange={handleChange}
                   placeholder="e.g., 1500"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-water-dark focus:outline-none"
+                  className="w-full px-3 md:px-4 py-2 md:py-3 border-2 border-gray-300 rounded-lg focus:border-water-dark focus:outline-none"
                 />
               </div>
 

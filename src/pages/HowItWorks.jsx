@@ -257,8 +257,8 @@ const HowItWorks = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {components.map((component, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-start space-x-3 mb-3">
-                  <Settings className="h-6 w-6 text-water-dark flex-shrink-0 mt-1" />
+                <div className="flex items-start space-x-2 md:space-x-3 mb-3">
+                  <Settings className="h-5 w-5 md:h-6 md:w-6 text-water-dark flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-bold text-gray-900 text-sm md:text-lg mb-1">{component.name}</h3>
                     <p className="text-xs md:text-sm text-water-dark font-semibold">{component.specs}</p>

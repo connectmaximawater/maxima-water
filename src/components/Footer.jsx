@@ -19,16 +19,16 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a href="#" className="hover:text-water-light transition-colors">
-                <Facebook className="h-5 w-5" />
+                <Facebook className="h-4 w-4 md:h-5 md:w-5" />
               </a>
               <a href="#" className="hover:text-water-light transition-colors">
-                <Twitter className="h-5 w-5" />
+                <Twitter className="h-4 w-4 md:h-5 md:w-5" />
               </a>
               <a href="#" className="hover:text-water-light transition-colors">
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-4 w-4 md:h-5 md:w-5" />
               </a>
               <a href="#" className="hover:text-water-light transition-colors">
-                <Instagram className="h-5 w-5" />
+                <Instagram className="h-4 w-4 md:h-5 md:w-5" />
               </a>
             </div>
           </div>
@@ -86,18 +86,18 @@ const Footer = () => {
           <div>
             <h3 className="text-sm md:text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3">
-              <li className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-water-light mt-1 flex-shrink-0" />
+              <li className="flex items-start space-x-2 md:space-x-3">
+                <MapPin className="h-4 w-4 md:h-5 md:w-5 text-water-light mt-1 flex-shrink-0" />
                 <span className="text-gray-300 text-xs md:text-sm">
                   Janasakthi Nagar, Vedayapalem, Nellore
                 </span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-water-light flex-shrink-0" />
+              <li className="flex items-center space-x-2 md:space-x-3">
+                <Phone className="h-4 w-4 md:h-5 md:w-5 text-water-light flex-shrink-0" />
                 <span className="text-gray-300 text-xs md:text-sm">+91 6300 225 335 (24/7)</span>
               </li>
-              <li className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-water-light flex-shrink-0" />
+              <li className="flex items-center space-x-2 md:space-x-3">
+                <Mail className="h-4 w-4 md:h-5 md:w-5 text-water-light flex-shrink-0" />
                 <span className="text-gray-300 text-xs md:text-sm">connect.maximawater@gmail.com</span>
               </li>
             </ul>

@@ -129,10 +129,10 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <div className="bg-white rounded-2xl p-8 shadow-lg h-full hover:shadow-2xl transition-shadow duration-300">
-                <div className="flex items-center mb-6">
-                  <div className="bg-water-light/20 p-4 rounded-full mr-4">
-                    <Target className="h-12 w-12 text-water-dark" />
+              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg h-full hover:shadow-2xl transition-shadow duration-300">
+                <div className="flex items-center mb-4 md:mb-6">
+                  <div className="bg-water-light/20 p-3 md:p-4 rounded-full mr-3 md:mr-4">
+                    <Target className="h-8 w-8 md:h-12 md:w-12 text-water-dark" />
                   </div>
                   <h3 className="text-xl md:text-3xl font-bold text-gray-900">Our Mission</h3>
                 </div>
@@ -145,10 +145,10 @@ const About = () => {
             </div>
 
             <div>
-              <div className="bg-white rounded-2xl p-8 shadow-lg h-full hover:shadow-2xl transition-shadow duration-300">
-                <div className="flex items-center mb-6">
-                  <div className="bg-water-light/20 p-4 rounded-full mr-4">
-                    <Eye className="h-12 w-12 text-water-dark" />
+              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg h-full hover:shadow-2xl transition-shadow duration-300">
+                <div className="flex items-center mb-4 md:mb-6">
+                  <div className="bg-water-light/20 p-3 md:p-4 rounded-full mr-3 md:mr-4">
+                    <Eye className="h-8 w-8 md:h-12 md:w-12 text-water-dark" />
                   </div>
                   <h3 className="text-xl md:text-3xl font-bold text-gray-900">Our Vision</h3>
                 </div>
@@ -242,8 +242,8 @@ const About = () => {
               Be part of the water conservation revolution. Let's build a sustainable future together.
             </p>
             <a
-              href="/contact"
-              className="inline-block bg-water-dark text-white px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-water-light transition-all duration-300 hover:scale-105 shadow-lg"
+              to="/contact"
+              className="inline-block bg-water-dark text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-water-light transition-all duration-300 hover:scale-105 shadow-lg"
             >
               Partner With Us
             </a>
