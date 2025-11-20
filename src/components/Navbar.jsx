@@ -48,10 +48,9 @@ const Navbar = () => {
                   onMouseEnter={() => setServicesOpen(true)}
                   onMouseLeave={() => setServicesOpen(false)}
                 >
-                  <Link
-                    to={link.path}
+                  <button
                     className={`relative text-xs md:text-sm font-medium transition-all duration-300 flex items-center gap-1 ${
-                      location.pathname === link.path || location.pathname.startsWith('/services/')
+                      location.pathname.startsWith('/services/')
                         ? 'text-water-dark font-semibold'
                         : 'text-gray-700 hover:text-water-dark'
                     }`}
@@ -60,12 +59,12 @@ const Navbar = () => {
                     <ChevronDown className={`h-3 w-3 transition-transform duration-300 ${servicesOpen ? 'rotate-180' : ''}`} />
                     <span
                       className={`absolute -bottom-1 left-0 w-full h-0.5 bg-water-dark transform origin-left transition-transform duration-300 ${
-                        location.pathname === link.path || location.pathname.startsWith('/services/')
+                        location.pathname.startsWith('/services/')
                           ? 'scale-x-100'
                           : 'scale-x-0 group-hover:scale-x-100'
                       }`}
                     ></span>
-                  </Link>
+                  </button>
                   
                   {/* Dropdown Menu */}
                   <div className={`absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300 z-50 ${
