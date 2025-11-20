@@ -71,7 +71,7 @@ const About = () => {
           <Droplets className="absolute bottom-20 right-20 h-24 w-24 text-white animate-float animation-delay-2000" />
         </div>
         <div className="relative z-10 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 animate-fade-in">
+          <h1 className="text-3xl md:text-6xl font-bold text-white mb-4 animate-fade-in">
             About <span className="text-cyan-200">Maxima Water</span>
           </h1>
           <p className="text-xl text-gray-100 max-w-2xl mx-auto px-4">
@@ -85,10 +85,10 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-6">
                 Our <span className="text-water-dark">Story</span>
               </h2>
-              <div className="space-y-4 text-lg text-gray-700">
+              <div className="space-y-4 text-sm md:text-lg text-gray-700">
                 <p>
                   Founded in 2008, Maxima Water emerged from a simple yet powerful vision: to make water 
                   conservation accessible, affordable, and effective for everyone. What started as a small 
@@ -112,7 +112,7 @@ const About = () => {
                 <div className="space-y-8">
                   {team.map((item, index) => (
                     <div key={index} className="border-b border-white/20 pb-6 last:border-0">
-                      <div className="text-5xl font-bold mb-2">{item.count}</div>
+                      <div className="text-3xl md:text-5xl font-bold mb-2">{item.count}</div>
                       <div className="text-xl font-semibold mb-1">{item.name}</div>
                       <div className="text-gray-200">{item.description}</div>
                     </div>
@@ -134,9 +134,9 @@ const About = () => {
                   <div className="bg-water-light/20 p-4 rounded-full mr-4">
                     <Target className="h-12 w-12 text-water-dark" />
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900">Our Mission</h3>
+                  <h3 className="text-xl md:text-3xl font-bold text-gray-900">Our Mission</h3>
                 </div>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-sm md:text-lg text-gray-700 leading-relaxed">
                   To provide innovative, sustainable, and cost-effective rainwater harvesting solutions 
                   that empower individuals and communities to conserve water, reduce environmental impact, 
                   and build a more sustainable future for generations to come.
@@ -150,9 +150,9 @@ const About = () => {
                   <div className="bg-water-light/20 p-4 rounded-full mr-4">
                     <Eye className="h-12 w-12 text-water-dark" />
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-900">Our Vision</h3>
+                  <h3 className="text-xl md:text-3xl font-bold text-gray-900">Our Vision</h3>
                 </div>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-sm md:text-lg text-gray-700 leading-relaxed">
                   To become the global leader in water conservation technology, creating a world where 
                   every drop of rainwater is valued and utilized efficiently. We envision a future where 
                   water scarcity is no longer a threat, and sustainable practices are the norm.
@@ -167,7 +167,7 @@ const About = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4">
               Our Core <span className="text-water-dark">Values</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -196,7 +196,7 @@ const About = () => {
       <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-5xl font-bold text-white mb-4">
               Our <span className="text-cyan-200">Journey</span>
             </h2>
             <p className="text-xl text-gray-100 max-w-2xl mx-auto">
@@ -216,7 +216,7 @@ const About = () => {
                   <div className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                     <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                       <div className="bg-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                        <div className="text-3xl font-bold text-water-dark mb-2">{milestone.year}</div>
+                        <div className="text-2xl md:text-3xl font-bold text-water-dark mb-2">{milestone.year}</div>
                         <p className="text-gray-700">{milestone.event}</p>
                       </div>
                     </div>
@@ -235,7 +235,7 @@ const About = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div>
             <Award className="h-20 w-20 text-water-dark mx-auto mb-6" />
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
               Join Our Mission
             </h2>
             <p className="text-xl text-gray-600 mb-8">
@@ -243,7 +243,7 @@ const About = () => {
             </p>
             <a
               href="/contact"
-              className="inline-block bg-water-dark text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-water-light transition-all duration-300 hover:scale-105 shadow-lg"
+              className="inline-block bg-water-dark text-white px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-water-light transition-all duration-300 hover:scale-105 shadow-lg"
             >
               Partner With Us
             </a>

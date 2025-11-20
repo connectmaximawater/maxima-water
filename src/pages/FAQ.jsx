@@ -118,10 +118,10 @@ const FAQ = () => {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-2xl md:text-5xl font-bold mb-6">
             Frequently Asked <span className="text-cyan-200">Questions</span>
           </h1>
-          <p className="text-lg text-gray-100 max-w-3xl mx-auto">
+          <p className="text-sm md:text-lg text-gray-100 max-w-3xl mx-auto">
             Everything you need to know about rainwater harvesting
           </p>
         </div>
@@ -132,7 +132,7 @@ const FAQ = () => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {faqs.map((category, categoryIndex) => (
             <div key={categoryIndex} className="mb-12">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-6 pb-3 border-b-4 border-water-dark">
+              <h2 className="text-lg md:text-2xl font-semibold text-gray-900 mb-6 pb-3 border-b-4 border-water-dark">
                 {category.category}
               </h2>
               <div className="space-y-4">
@@ -149,7 +149,7 @@ const FAQ = () => {
                         onClick={() => toggleFAQ(globalIndex)}
                         className="w-full px-6 py-5 flex items-start justify-between text-left hover:bg-gray-100 transition-colors duration-200"
                       >
-                        <span className="font-semibold text-base text-gray-900 pr-4">
+                        <span className="font-semibold text-sm md:text-base text-gray-900 pr-4">
                           {faq.q}
                         </span>
                         <span className="flex-shrink-0 mt-1">
@@ -179,20 +179,20 @@ const FAQ = () => {
       {/* Still Have Questions CTA */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h2 className="text-4xl font-bold mb-6">Still Have Questions?</h2>
+          <h2 className="text-2xl md:text-4xl font-bold mb-6">Still Have Questions?</h2>
           <p className="text-xl mb-8 text-gray-100">
             Our experts are here to help! Get in touch with us for personalized assistance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="inline-block bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-cyan-200 transition-colors"
+              className="inline-block bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-cyan-200 transition-colors"
             >
               Contact Us
             </a>
             <a
               href="tel:+916300225335"
-              className="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors"
+              className="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-white hover:text-blue-900 transition-colors"
             >
               📞 Call: +91 6300 225 335 (24/7)
             </a>
@@ -205,19 +205,19 @@ const FAQ = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-water-dark mb-2">30-60%</div>
+              <div className="text-2xl md:text-4xl font-bold text-water-dark mb-2">30-60%</div>
               <div className="text-gray-600">Water Bill Savings</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-water-dark mb-2">3-5 Years</div>
+              <div className="text-2xl md:text-4xl font-bold text-water-dark mb-2">3-5 Years</div>
               <div className="text-gray-600">Payback Period</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-water-dark mb-2">50%</div>
+              <div className="text-2xl md:text-4xl font-bold text-water-dark mb-2">50%</div>
               <div className="text-gray-600">Govt Subsidy</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-water-dark mb-2">24/7</div>
+              <div className="text-2xl md:text-4xl font-bold text-water-dark mb-2">24/7</div>
               <div className="text-gray-600">Technical Support</div>
             </div>
           </div>

@@ -103,10 +103,10 @@ const Calculator = () => {
       <section className="relative py-20 bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <CalcIcon className="h-16 w-16 mx-auto mb-6 text-cyan-200" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-2xl md:text-5xl font-bold mb-6">
             Savings <span className="text-cyan-200">Calculator</span>
           </h1>
-          <p className="text-lg text-gray-100 max-w-3xl mx-auto">
+          <p className="text-sm md:text-lg text-gray-100 max-w-3xl mx-auto">
             Calculate how much you can save with rainwater harvesting
           </p>
         </div>
@@ -116,12 +116,12 @@ const Calculator = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Input Form */}
           <div className="bg-white p-8 rounded-2xl shadow-xl">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Enter Your Details</h2>
+            <h2 className="text-lg md:text-2xl font-semibold text-gray-900 mb-6">Enter Your Details</h2>
 
             <div className="space-y-6">
               {/* Property Type */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
                   Property Type
                 </label>
                 <select
@@ -157,7 +157,7 @@ const Calculator = () => {
 
               {/* Roof Area */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
                   <Home className="inline h-4 w-4 mr-1" />
                   Roof/Collection Area (sq ft)
                 </label>
@@ -173,7 +173,7 @@ const Calculator = () => {
 
               {/* Number of Residents */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
                   <Users className="inline h-4 w-4 mr-1" />
                   Number of Residents
                 </label>
@@ -189,7 +189,7 @@ const Calculator = () => {
 
               {/* Current Monthly Bill */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-2">
                   <IndianRupee className="inline h-4 w-4 mr-1" />
                   Current Monthly Water Bill (₹)
                 </label>
@@ -205,7 +205,7 @@ const Calculator = () => {
 
               <button
                 onClick={calculateSavings}
-                className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-4 rounded-lg font-bold text-lg hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg"
+                className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-4 rounded-lg font-bold text-sm md:text-lg hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg"
               >
                 Calculate Savings
               </button>
@@ -220,8 +220,8 @@ const Calculator = () => {
                 <div className="bg-gradient-to-br from-blue-600 to-cyan-500 p-8 rounded-2xl text-white shadow-xl">
                   <Droplets className="h-12 w-12 mb-4 text-cyan-200" />
                   <h3 className="text-xl font-semibold mb-2">Annual Rainwater Collection</h3>
-                  <p className="text-4xl font-bold">{results.annualCollectionLiters.toLocaleString()} L</p>
-                  <p className="text-sm text-gray-100 mt-2">Based on {results.cityRainfall}mm annual rainfall</p>
+                  <p className="text-2xl md:text-4xl font-bold">{results.annualCollectionLiters.toLocaleString()} L</p>
+                  <p className="text-xs md:text-sm text-gray-100 mt-2">Based on {results.cityRainfall}mm annual rainfall</p>
                 </div>
 
                 {/* Water Needs Met */}
@@ -229,7 +229,7 @@ const Calculator = () => {
                   <TrendingDown className="h-12 w-12 mb-4 text-water-dark" />
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Water Needs Met</h3>
                   <div className="flex items-baseline gap-2">
-                    <p className="text-4xl font-bold text-water-dark">{results.percentageMet}%</p>
+                    <p className="text-2xl md:text-4xl font-bold text-water-dark">{results.percentageMet}%</p>
                     <p className="text-gray-600">of annual usage</p>
                   </div>
                   <div className="mt-4 bg-gray-200 rounded-full h-4 overflow-hidden">
@@ -244,8 +244,8 @@ const Calculator = () => {
                 <div className="bg-gradient-to-br from-green-600 to-emerald-500 p-8 rounded-2xl text-white shadow-xl">
                   <IndianRupee className="h-12 w-12 mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Annual Savings</h3>
-                  <p className="text-4xl font-bold">₹{results.annualSavings.toLocaleString()}</p>
-                  <p className="text-sm text-gray-100 mt-2">
+                  <p className="text-2xl md:text-4xl font-bold">₹{results.annualSavings.toLocaleString()}</p>
+                  <p className="text-xs md:text-sm text-gray-100 mt-2">
                     ₹{results.monthlyBillReduction.toLocaleString()} saved per month
                   </p>
                 </div>
@@ -273,8 +273,8 @@ const Calculator = () => {
                 <div className="bg-gradient-to-br from-purple-600 to-pink-500 p-8 rounded-2xl text-white shadow-xl">
                   <CheckCircle2 className="h-12 w-12 mb-4" />
                   <h3 className="text-xl font-semibold mb-2">Return on Investment</h3>
-                  <p className="text-4xl font-bold">{results.roiYears} years</p>
-                  <p className="text-sm text-gray-100 mt-2">Payback period for your investment</p>
+                  <p className="text-2xl md:text-4xl font-bold">{results.roiYears} years</p>
+                  <p className="text-xs md:text-sm text-gray-100 mt-2">Payback period for your investment</p>
                 </div>
 
                 {/* Info Note */}
@@ -282,7 +282,7 @@ const Calculator = () => {
                   <div className="flex items-start gap-3">
                     <AlertCircle className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
                     <div>
-                      <p className="text-sm text-gray-700">
+                      <p className="text-xs md:text-sm text-gray-700">
                         <strong>Note:</strong> Calculations are estimates based on average values. 
                         Actual savings may vary based on rainfall patterns, water usage, and system efficiency. 
                         Contact us for a detailed customized assessment.
@@ -294,7 +294,7 @@ const Calculator = () => {
             ) : (
               <div className="bg-gray-50 p-12 rounded-2xl text-center h-full flex flex-col items-center justify-center">
                 <CalcIcon className="h-24 w-24 text-gray-300 mb-6" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Ready to Calculate?</h3>
+                <h3 className="text-lg md:text-2xl font-bold text-gray-900 mb-2">Ready to Calculate?</h3>
                 <p className="text-gray-600">
                   Fill in your details on the left and click "Calculate Savings" to see your potential benefits
                 </p>
@@ -306,21 +306,21 @@ const Calculator = () => {
         {/* Additional Info */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white p-6 rounded-xl shadow-md text-center">
-            <div className="text-4xl mb-3">💰</div>
+            <div className="text-3xl md:text-4xl mb-3">💰</div>
             <h3 className="font-bold text-gray-900 mb-2">Government Subsidy</h3>
             <p className="text-sm text-gray-600">
               Get up to 50% subsidy on installation costs under various government schemes
             </p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow-md text-center">
-            <div className="text-4xl mb-3">📊</div>
+            <div className="text-3xl md:text-4xl mb-3">📊</div>
             <h3 className="font-bold text-gray-900 mb-2">Free Site Assessment</h3>
             <p className="text-sm text-gray-600">
               Our engineers will visit and provide accurate calculations for your property
             </p>
           </div>
           <div className="bg-white p-6 rounded-xl shadow-md text-center">
-            <div className="text-4xl mb-3">✅</div>
+            <div className="text-3xl md:text-4xl mb-3">✅</div>
             <h3 className="font-bold text-gray-900 mb-2">Instant Quote</h3>
             <p className="text-sm text-gray-600">
               Get a detailed quotation within 24 hours of site visit

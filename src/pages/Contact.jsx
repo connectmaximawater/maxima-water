@@ -84,10 +84,10 @@ const Contact = () => {
           <Droplets className="absolute bottom-20 right-20 h-24 w-24 text-white" />
         </div>
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-2xl md:text-5xl font-bold text-white mb-4">
             Get In <span className="text-cyan-200">Touch</span>
           </h1>
-          <p className="text-lg text-gray-100 max-w-2xl mx-auto">
+          <p className="text-sm md:text-lg text-gray-100 max-w-2xl mx-auto">
             We're here to help you with all your rainwater harvesting needs
           </p>
         </div>
@@ -120,14 +120,14 @@ const Contact = () => {
             {/* Contact Form */}
             <div>
               <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">
                   Send Us a <span className="text-water-dark">Message</span>
                 </h2>
                 
                 {submitted ? (
                   <div className="bg-green-50 border-2 border-green-500 rounded-xl p-8 text-center">
                     <CheckCircle2 className="h-16 w-16 text-green-500 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold text-green-800 mb-2">Thank You!</h3>
+                    <h3 className="text-lg md:text-2xl font-bold text-green-800 mb-2">Thank You!</h3>
                     <p className="text-green-700">Your message has been sent successfully. We'll get back to you soon!</p>
                   </div>
                 ) : (
@@ -237,7 +237,7 @@ const Contact = () => {
 
                     <button
                       type="submit"
-                      className="w-full bg-water-dark text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-water-light transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center group"
+                      className="w-full bg-water-dark text-white px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-water-light transition-all duration-300 hover:scale-105 shadow-lg flex items-center justify-center group"
                     >
                       Send Message
                       <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -250,7 +250,7 @@ const Contact = () => {
             {/* Additional Info */}
             <div>
               <div className="mb-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">
                   Why <span className="text-water-dark">Contact Us?</span>
                 </h2>
                 <div className="space-y-4">
@@ -286,10 +286,10 @@ const Contact = () => {
 
               {/* Map Placeholder */}
               <div className="bg-gradient-to-br from-water-light to-water-dark rounded-2xl p-8 shadow-lg text-white">
-                <h3 className="text-2xl font-bold mb-4">Visit Our Office</h3>
+                <h3 className="text-lg md:text-2xl font-bold mb-4">Visit Our Office</h3>
                 <div className="bg-white/10 rounded-xl p-8 mb-4 backdrop-blur-sm">
                   <MapPin className="h-16 w-16 mx-auto mb-4 text-cyan-200" />
-                  <p className="text-center text-lg">
+                  <p className="text-center text-sm md:text-lg">
                     Janasakthi Nagar, Vedayapalem<br />
                     Nellore, Andhra Pradesh<br />
                     India
@@ -313,10 +313,10 @@ const Contact = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl md:text-4xl font-semibold text-gray-900 mb-4">
               Frequently Asked <span className="text-water-dark">Questions</span>
             </h2>
-            <p className="text-base text-gray-600">
+            <p className="text-xs md:text-base text-gray-600">
               Quick answers to common questions
             </p>
           </div>
@@ -344,7 +344,7 @@ const Contact = () => {
                 key={index}
                 className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
               >
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{faq.q}</h3>
+                <h3 className="text-sm md:text-lg font-bold text-gray-900 mb-2">{faq.q}</h3>
                 <p className="text-gray-600">{faq.a}</p>
               </div>
             ))}
@@ -356,15 +356,15 @@ const Contact = () => {
       <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
+            <h2 className="text-xl md:text-4xl font-semibold text-white mb-6">
               Prefer to Talk?
             </h2>
-            <p className="text-base text-gray-100 mb-8">
+            <p className="text-xs md:text-base text-gray-100 mb-8">
               Give us a call and speak with our experts directly
             </p>
             <a
               href="tel:+916300225335"
-              className="inline-flex items-center bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-cyan-200 transition-all duration-300 hover:scale-105 shadow-lg"
+              className="inline-flex items-center bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-cyan-200 transition-all duration-300 hover:scale-105 shadow-lg"
             >
               <Phone className="mr-2 h-5 w-5" />
               +91 6300 225 335

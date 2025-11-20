@@ -171,10 +171,10 @@ const HowItWorks = () => {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-2xl md:text-5xl font-bold mb-6">
             How It <span className="text-cyan-200">Works</span>
           </h1>
-          <p className="text-lg text-gray-100 max-w-3xl mx-auto">
+          <p className="text-sm md:text-lg text-gray-100 max-w-3xl mx-auto">
             Understanding the complete rainwater harvesting process - from rooftop to your tap
           </p>
         </div>
@@ -184,10 +184,10 @@ const HowItWorks = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-              The <span className="text-water-dark">Complete Process</span>
+            <h2 className="text-xl md:text-3xl font-semibold text-gray-900 mb-4">
+              The <span className="text-water-dark">Process</span>
             </h2>
-            <p className="text-base text-gray-600">6 steps to water independence</p>
+            <p className="text-xs md:text-base text-gray-600">6 steps to water independence</p>
           </div>
 
           <div className="space-y-12">
@@ -199,7 +199,7 @@ const HowItWorks = () => {
                 }`}
               >
                 <div className="flex-shrink-0">
-                  <div className={`w-20 h-20 rounded-full flex items-center justify-center text-3xl font-bold ${
+                  <div className={`w-20 h-20 rounded-full flex items-center justify-center text-2xl md:text-3xl font-bold ${
                     step.highlight 
                       ? 'bg-water-dark text-white' 
                       : 'bg-gradient-to-br from-blue-600 to-cyan-500 text-white'
@@ -213,14 +213,14 @@ const HowItWorks = () => {
                     <div className={step.highlight ? 'text-water-dark' : 'text-blue-600'}>
                       {step.icon}
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900">{step.title}</h3>
+                    <h3 className="text-lg md:text-2xl font-bold text-gray-900">{step.title}</h3>
                     {step.highlight && (
-                      <span className="bg-yellow-400 text-blue-900 px-3 py-1 rounded-full text-sm font-bold">
+                      <span className="bg-yellow-400 text-blue-900 px-3 py-1 rounded-full text-xs md:text-sm font-bold">
                         ⭐ SIGNATURE FEATURE
                       </span>
                     )}
                   </div>
-                  <p className="text-lg text-gray-700 mb-4">{step.description}</p>
+                  <p className="text-sm md:text-lg text-gray-700 mb-4">{step.description}</p>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {step.details.map((detail, idx) => (
                       <li key={idx} className="flex items-start space-x-2">
@@ -248,10 +248,10 @@ const HowItWorks = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
               System <span className="text-water-dark">Components</span>
             </h2>
-            <p className="text-xl text-gray-600">Technical specifications of each component</p>
+            <p className="text-base md:text-xl text-gray-600">Technical specifications of each component</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -260,11 +260,11 @@ const HowItWorks = () => {
                 <div className="flex items-start space-x-3 mb-3">
                   <Settings className="h-6 w-6 text-water-dark flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-bold text-gray-900 text-lg mb-1">{component.name}</h3>
-                    <p className="text-sm text-water-dark font-semibold">{component.specs}</p>
+                    <h3 className="font-bold text-gray-900 text-sm md:text-lg mb-1">{component.name}</h3>
+                    <p className="text-xs md:text-sm text-water-dark font-semibold">{component.specs}</p>
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm">{component.function}</p>
+                <p className="text-gray-600 text-xs md:text-sm">{component.function}</p>
               </div>
             ))}
           </div>
@@ -275,10 +275,10 @@ const HowItWorks = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
               Safety & <span className="text-water-dark">Quality</span>
             </h2>
-            <p className="text-xl text-gray-600">Built-in safety mechanisms</p>
+            <p className="text-base md:text-xl text-gray-600">Built-in safety mechanisms</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -296,7 +296,7 @@ const HowItWorks = () => {
       <section className="py-20 bg-gradient-to-br from-blue-900 to-cyan-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">
               Maintenance <span className="text-cyan-200">Schedule</span>
             </h2>
             <p className="text-xl text-gray-200">Simple upkeep for optimal performance</p>
@@ -307,7 +307,7 @@ const HowItWorks = () => {
               <div key={index} className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
                 <div className="flex items-center gap-3 mb-6">
                   <Wrench className="h-8 w-8 text-cyan-200" />
-                  <h3 className="text-2xl font-bold">{schedule.frequency}</h3>
+                  <h3 className="text-lg md:text-2xl font-bold">{schedule.frequency}</h3>
                 </div>
                 <ul className="space-y-3">
                   {schedule.tasks.map((task, idx) => (
@@ -322,7 +322,7 @@ const HowItWorks = () => {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-gray-200 text-lg mb-6">
+            <p className="text-gray-200 text-sm md:text-lg mb-6">
               💡 We provide Annual Maintenance Contracts (AMC) for hassle-free operation
             </p>
             <button className="bg-cyan-400 text-blue-900 px-8 py-3 rounded-full font-bold hover:bg-cyan-300 transition-colors">
@@ -336,10 +336,10 @@ const HowItWorks = () => {
       <section className="py-20 bg-gray-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
               Watch How It <span className="text-water-dark">Works</span>
             </h2>
-            <p className="text-xl text-gray-600">Video demonstration of our complete system</p>
+            <p className="text-base md:text-xl text-gray-600">Video demonstration of our complete system</p>
           </div>
 
           <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-2xl aspect-video flex items-center justify-center">
@@ -349,8 +349,8 @@ const HowItWorks = () => {
                   <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
                 </svg>
               </div>
-              <p className="text-lg">System Installation & Operation Video</p>
-              <p className="text-sm text-gray-400 mt-2">(Video coming soon)</p>
+              <p className="text-sm md:text-lg">System Installation & Operation Video</p>
+              <p className="text-xs md:text-sm text-gray-400 mt-2">(Video coming soon)</p>
             </div>
           </div>
         </div>

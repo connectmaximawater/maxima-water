@@ -31,7 +31,7 @@ function App() {
       <div className="min-h-screen bg-white">
         <ScrollToTop />
         <Navbar />
-        <div className="pt-20">
+        <div className="pt-16 md:pt-20">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

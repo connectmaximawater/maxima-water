@@ -14,7 +14,7 @@ const Footer = () => {
             <div className="flex items-center space-x-2">
               <img src={Logo} alt="Maxima Water Logo" className="h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
             </div>
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-300 text-xs md:text-sm">
               Leading the way in sustainable rainwater harvesting solutions. Conserving water for a better tomorrow.
             </p>
             <div className="flex space-x-4">
@@ -35,7 +35,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-sm md:text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-gray-300 hover:text-water-light transition-colors">
@@ -72,8 +72,8 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-2 text-gray-300 text-sm">
+            <h3 className="text-sm md:text-lg font-semibold mb-4">Our Services</h3>
+            <ul className="space-y-2 text-gray-300 text-xs md:text-sm">
               <li>Rainwater Harvesting Systems</li>
               <li>System Design & Installation</li>
               <li>Maintenance & Support</li>
@@ -84,21 +84,21 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-sm md:text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-water-light mt-1 flex-shrink-0" />
-                <span className="text-gray-300 text-sm">
+                <span className="text-gray-300 text-xs md:text-sm">
                   Janasakthi Nagar, Vedayapalem, Nellore
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-water-light flex-shrink-0" />
-                <span className="text-gray-300 text-sm">+91 6300 225 335 (24/7)</span>
+                <span className="text-gray-300 text-xs md:text-sm">+91 6300 225 335 (24/7)</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-water-light flex-shrink-0" />
-                <span className="text-gray-300 text-sm">connect.maximawater@gmail.com</span>
+                <span className="text-gray-300 text-xs md:text-sm">connect.maximawater@gmail.com</span>
               </li>
             </ul>
           </div>

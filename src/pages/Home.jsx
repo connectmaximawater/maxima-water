@@ -107,21 +107,21 @@ const Home = () => {
       <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-500">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 text-shadow">
+            <h1 className="text-2xl md:text-5xl font-bold text-white mb-6 text-shadow">
               Smart Rainwater Harvesting
               <br />
               <span className="text-cyan-200">for Apartments & Homes</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-100 mb-4 font-semibold">
+            <p className="text-base md:text-2xl text-gray-100 mb-4 font-semibold">
               Save 30–60% on Water Bills
             </p>
-            <p className="text-lg text-gray-200 mb-8 max-w-3xl mx-auto">
+            <p className="text-sm md:text-lg text-gray-200 mb-8 max-w-3xl mx-auto">
               Automatic switching between rainwater & normal water supply. Never run out of water again!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 to="/contact"
-                className="bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-cyan-200 transition-all duration-300 shadow-lg flex items-center group"
+                className="bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-cyan-200 transition-all duration-300 shadow-lg flex items-center group"
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Get Free Site Inspection
@@ -143,10 +143,10 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl md:text-4xl font-semibold text-gray-900 mb-4">
               Why Rainwater <span className="text-water-dark">Harvesting?</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto">
               Experience the benefits of sustainable water management
             </p>
           </div>
@@ -160,8 +160,8 @@ const Home = () => {
                 <div className="text-water-dark mb-4 group-hover:scale-110 transition-transform duration-300">
                   {benefit.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">{benefit.title}</h3>
-                <p className="text-sm text-gray-600">{benefit.description}</p>
+                <h3 className="text-sm md:text-lg font-semibold text-gray-900 mb-3">{benefit.title}</h3>
+                <p className="text-xs md:text-sm text-gray-600">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -172,10 +172,10 @@ const Home = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl md:text-4xl font-semibold text-gray-900 mb-4">
               How It <span className="text-water-dark">Works</span>
             </h2>
-            <p className="text-base text-gray-600">Simple, automated, and efficient</p>
+            <p className="text-xs md:text-base text-gray-600">Simple, automated, and efficient</p>
           </div>
 
           <div className="flex flex-wrap justify-center items-center gap-4">
@@ -183,10 +183,10 @@ const Home = () => {
               <div key={index} className="flex items-center">
                 <div className="text-center">
                   <div className="bg-white rounded-full w-32 h-32 flex flex-col items-center justify-center shadow-lg border-4 border-water-light">
-                    <div className="text-5xl mb-2">{item.icon}</div>
-                    <div className="text-sm font-bold text-gray-900">{item.step}</div>
+                    <div className="text-4xl md:text-5xl mb-2">{item.icon}</div>
+                    <div className="text-xs md:text-sm font-bold text-gray-900">{item.step}</div>
                   </div>
-                  <p className="text-sm text-gray-600 mt-2 max-w-[120px]">{item.desc}</p>
+                  <p className="text-xs md:text-sm text-gray-600 mt-2 max-w-[120px]">{item.desc}</p>
                 </div>
                 {index < howItWorksSteps.length - 1 && (
                   <ArrowRight className="h-8 w-8 text-water-dark mx-2 hidden md:block" />
@@ -198,7 +198,7 @@ const Home = () => {
           <div className="text-center mt-12">
             <Link
               to="/how-it-works"
-              className="inline-flex items-center text-water-dark font-semibold text-lg hover:text-water-light transition-colors"
+              className="inline-flex items-center text-water-dark font-semibold text-sm md:text-lg hover:text-water-light transition-colors"
             >
               Learn More About The Process
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -211,10 +211,10 @@ const Home = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl md:text-4xl font-semibold text-gray-900 mb-4">
               Solutions We <span className="text-water-dark">Offer</span>
             </h2>
-            <p className="text-base text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xs md:text-base text-gray-600 max-w-2xl mx-auto">
               Tailored rainwater harvesting systems for every need
             </p>
           </div>
@@ -225,9 +225,9 @@ const Home = () => {
                 key={index}
                 className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
               >
-                <div className="text-6xl mb-4 text-center">{solution.image}</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">{solution.title}</h3>
-                <p className="text-sm text-gray-600 text-center">{solution.description}</p>
+                <div className="text-5xl md:text-6xl mb-4 text-center">{solution.image}</div>
+                <h3 className="text-sm md:text-lg font-semibold text-gray-900 mb-3 text-center">{solution.title}</h3>
+                <p className="text-xs md:text-sm text-gray-600 text-center">{solution.description}</p>
                 <div className="mt-6 text-center">
                   <Link
                     to="/solutions"
@@ -247,10 +247,10 @@ const Home = () => {
       <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+            <h2 className="text-xl md:text-4xl font-semibold mb-4">
               Why Choose <span className="text-cyan-200">Maxima Water?</span>
             </h2>
-            <p className="text-base text-gray-100 max-w-2xl mx-auto">
+            <p className="text-xs md:text-base text-gray-100 max-w-2xl mx-auto">
               Your trusted partner in water conservation
             </p>
           </div>
@@ -262,7 +262,7 @@ const Home = () => {
                 className="flex items-start space-x-4 bg-white/10 backdrop-blur-sm p-6 rounded-xl"
               >
                 <CheckCircle2 className="h-5 w-5 text-cyan-200 flex-shrink-0 mt-1" />
-                <span className="text-sm text-gray-100">{reason}</span>
+                <span className="text-xs md:text-sm text-gray-100">{reason}</span>
               </div>
             ))}
           </div>
@@ -273,10 +273,10 @@ const Home = () => {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-xl md:text-4xl font-semibold text-gray-900 mb-4">
               What Our <span className="text-water-dark">Clients Say</span>
             </h2>
-            <p className="text-base text-gray-600">Real experiences from satisfied customers</p>
+            <p className="text-xs md:text-base text-gray-600">Real experiences from satisfied customers</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -287,13 +287,13 @@ const Home = () => {
               >
                 <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-2xl">★</span>
+                    <span key={i} className="text-yellow-400 text-xl md:text-2xl">★</span>
                   ))}
                 </div>
                 <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
                 <div className="border-t pt-4">
                   <p className="font-bold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-600">{testimonial.location}</p>
+                  <p className="text-xs md:text-sm text-gray-600">{testimonial.location}</p>
                 </div>
               </div>
             ))}
@@ -305,16 +305,16 @@ const Home = () => {
       <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
+            <h2 className="text-xl md:text-4xl font-semibold text-white mb-6">
               Ready to Save Water & Money?
             </h2>
-            <p className="text-base text-gray-100 mb-8">
+            <p className="text-xs md:text-base text-gray-100 mb-8">
               Book a free on-site visit and get a customized quote today
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-cyan-200 transition-all duration-300 shadow-lg group"
+                className="inline-flex items-center bg-white text-blue-900 px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-cyan-200 transition-all duration-300 shadow-lg group"
               >
                 <Phone className="mr-2 h-5 w-5" />
                 Book Free Site Visit
@@ -324,7 +324,7 @@ const Home = () => {
                 href="https://wa.me/916300225335"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center bg-green-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-600 transition-all duration-300 shadow-lg"
+                className="inline-flex items-center bg-green-500 text-white px-8 py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-green-600 transition-all duration-300 shadow-lg"
               >
                 WhatsApp Us
               </a>
