@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  :root {
+    --water-light: #4dd0e1;
+    --water-main: #00bcd4;
+    --water-dark: #0097a7;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bg-water-dark {
+    background-color: #0097a7;
+  }
+  
+  .bg-water-light {
+    background-color: #4dd0e1;
+  }
+  
+  .text-water-dark {
+    color: #0097a7;
+  }
+  
+  .text-water-light {
+    color: #4dd0e1;
+  }
+  
+  .border-water-dark {
+    border-color: #0097a7;
+  }
+  
+  .border-water-light {
+    border-color: #4dd0e1;
+  }
+  
+  .hover\:bg-water-light:hover {
+    background-color: #4dd0e1;
+  }
+  
+  .hover\:text-water-dark:hover {
+    color: #0097a7;
+  }
+  
+  .hover\:text-water-light:hover {
+    color: #4dd0e1;
+  }
+  
+  .hover\:border-water-dark:hover {
+    border-color: #0097a7;
+  }
+  
+  .hover\:border-water-light:hover {
+    border-color: #4dd0e1;
+  }
+  
+  .focus\:border-water-dark:focus {
+    border-color: #0097a7;
+  }
+  
+  .focus\:ring-water-light\/50:focus {
+    --tw-ring-color: rgba(77, 208, 225, 0.5);
+  }
+}
