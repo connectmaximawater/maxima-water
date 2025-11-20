@@ -11,13 +11,13 @@ const Navbar = () => {
   const servicesList = [
     { name: 'Rainwater Harvesting Systems', path: '/services/rainwater-harvesting', icon: <Droplets className="h-4 w-4" /> },
     { name: 'Graywater Reuse Systems', path: '/services/graywater-reuse', icon: <Recycle className="h-4 w-4" /> },
-    { name: 'Drainage Solutions', path: '/services/drainage-solutions', icon: <Grid3x3 className="h-4 w-4" /> },
+    // { name: 'Drainage Solutions', path: '/services/drainage-solutions', icon: <Grid3x3 className="h-4 w-4" /> },
     { name: 'Gutter Installation', path: '/services/gutter-installation', icon: <ArrowDown className="h-4 w-4" /> },
     { name: 'Service, Maintain, Inspect', path: '/services/service-maintain-inspect', icon: <Wrench className="h-4 w-4" /> },
     { name: 'Irrigation Systems', path: '/services/irrigation-systems', icon: <Droplet className="h-4 w-4" /> },
     { name: 'Landscape Installation', path: '/services/landscape-installation', icon: <Leaf className="h-4 w-4" /> },
-    { name: 'Well Tank & Pump Systems', path: '/services/well-tank-pump-systems', icon: <Database className="h-4 w-4" /> },
-    { name: 'Fire Protection Water Storage', path: '/services/fire-protection-water-storage', icon: <Flame className="h-4 w-4" /> },
+    // { name: 'Well Tank & Pump Systems', path: '/services/well-tank-pump-systems', icon: <Database className="h-4 w-4" /> },
+    // { name: 'Fire Protection Water Storage', path: '/services/fire-protection-water-storage', icon: <Flame className="h-4 w-4" /> },
   ];
 
   const navLinks = [
