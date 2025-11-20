@@ -100,7 +100,7 @@ const Navbar = () => {
                       key={link.path}
                       to={link.path}
                       onClick={() => setIsOpen(false)}
-                      className={`px-4 py-3 rounded-lg text-sm md:text-base font-medium transition-all duration-300 ${
+                      className={`px-4 py-2 rounded-lg text-sm md:text-base font-medium transition-all duration-300 ${
                         location.pathname === link.path
                           ? 'bg-water-dark text-white'
                           : 'text-gray-700 hover:bg-gray-100 hover:text-water-dark'
@@ -116,7 +116,7 @@ const Navbar = () => {
                   <Link
                     to="/contact"
                     onClick={() => setIsOpen(false)}
-                    className="block w-full bg-water-dark text-white px-6 py-3 rounded-full hover:bg-water-light transition-all duration-300 text-center font-semibold"
+                    className="block w-full bg-water-dark text-white px-6 py-2 rounded-full hover:bg-water-light transition-all duration-300 text-center font-semibold"
                   >
                     Get Quote
                   </Link>
