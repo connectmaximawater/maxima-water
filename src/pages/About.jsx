@@ -108,7 +108,7 @@ const About = () => {
             </div>
 
             <div>
-              <div className="bg-gradient-to-br from-water-light to-water-dark rounded-3xl p-12 shadow-2xl text-white">
+              <div className="bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-500 rounded-3xl p-12 shadow-2xl text-white">
                 <div className="space-y-8">
                   {team.map((item, index) => (
                     <div key={index} className="border-b border-white/20 pb-6 last:border-0">

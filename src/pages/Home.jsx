@@ -19,22 +19,22 @@ import {
 const Home = () => {
   const benefits = [
     {
-      icon: <TrendingDown className="h-12 w-12" />,
+      icon: <TrendingDown className="h-10 w-10" />,
       title: 'Save 30-60% Water Bills',
       description: 'Reduce dependency on municipal water and cut costs significantly.',
     },
     {
-      icon: <Clock className="h-12 w-12" />,
+      icon: <Clock className="h-10 w-10" />,
       title: '24/7 Water Availability',
       description: 'Never worry about water shortages with automatic dual-source switching.',
     },
     {
-      icon: <Leaf className="h-12 w-12" />,
+      icon: <Leaf className="h-10 w-10" />,
       title: 'Eco-Friendly Solution',
       description: 'Sustainable, low maintenance, and environmentally responsible.',
     },
     {
-      icon: <Award className="h-12 w-12" />,
+      icon: <Award className="h-10 w-10" />,
       title: 'Government Incentives',
       description: 'Qualify for subsidies and comply with regulations.',
     },

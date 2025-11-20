@@ -1,19 +1,31 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Droplets } from 'lucide-react';
+import { Menu, X, Droplets, ChevronDown, Recycle, Grid3x3, ArrowDown, Wrench, Droplet, Leaf, Database, Flame } from 'lucide-react';
 import Logo from '../assets/Logo.png'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
+
+  const servicesList = [
+    { name: 'Rainwater Harvesting Systems', path: '/services/rainwater-harvesting', icon: <Droplets className="h-4 w-4" /> },
+    { name: 'Graywater Reuse Systems', path: '/services/graywater-reuse', icon: <Recycle className="h-4 w-4" /> },
+    { name: 'Drainage Solutions', path: '/services/drainage-solutions', icon: <Grid3x3 className="h-4 w-4" /> },
+    { name: 'Gutter Installation', path: '/services/gutter-installation', icon: <ArrowDown className="h-4 w-4" /> },
+    { name: 'Service, Maintain, Inspect', path: '/services/service-maintain-inspect', icon: <Wrench className="h-4 w-4" /> },
+    { name: 'Irrigation Systems', path: '/services/irrigation-systems', icon: <Droplet className="h-4 w-4" /> },
+    { name: 'Landscape Installation', path: '/services/landscape-installation', icon: <Leaf className="h-4 w-4" /> },
+    { name: 'Well Tank & Pump Systems', path: '/services/well-tank-pump-systems', icon: <Database className="h-4 w-4" /> },
+    { name: 'Fire Protection Water Storage', path: '/services/fire-protection-water-storage', icon: <Flame className="h-4 w-4" /> },
+  ];
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
+    { name: 'Services', path: '/services', hasDropdown: true },
     { name: 'Solutions', path: '/solutions' },
     { name: 'How It Works', path: '/how-it-works' },
-    // { name: 'Calculator', path: '/calculator' },
-    // { name: 'FAQ', path: '/faq' },
+    { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -29,24 +41,76 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`relative text-xs md:text-sm font-medium transition-all duration-300 group ${
-                  location.pathname === link.path
-                    ? 'text-water-dark font-semibold'
-                    : 'text-gray-700 hover:text-water-dark'
-                }`}
-              >
-                {link.name}
-                <span
-                  className={`absolute -bottom-1 left-0 w-full h-0.5 bg-water-dark transform origin-left transition-transform duration-300 ${
+              link.hasDropdown ? (
+                <div 
+                  key={link.path}
+                  className="relative group"
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => setServicesOpen(false)}
+                >
+                  <Link
+                    to={link.path}
+                    className={`relative text-xs md:text-sm font-medium transition-all duration-300 flex items-center gap-1 ${
+                      location.pathname === link.path || location.pathname.startsWith('/services/')
+                        ? 'text-water-dark font-semibold'
+                        : 'text-gray-700 hover:text-water-dark'
+                    }`}
+                  >
+                    {link.name}
+                    <ChevronDown className={`h-3 w-3 transition-transform duration-300 ${servicesOpen ? 'rotate-180' : ''}`} />
+                    <span
+                      className={`absolute -bottom-1 left-0 w-full h-0.5 bg-water-dark transform origin-left transition-transform duration-300 ${
+                        location.pathname === link.path || location.pathname.startsWith('/services/')
+                          ? 'scale-x-100'
+                          : 'scale-x-0 group-hover:scale-x-100'
+                      }`}
+                    ></span>
+                  </Link>
+                  
+                  {/* Dropdown Menu */}
+                  <div className={`absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300 z-50 ${
+                    servicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+                  }`}>
+                    <div className="p-2">
+                      {servicesList.map((service, index) => (
+                        <Link
+                          key={service.path}
+                          to={service.path}
+                          className="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-700 hover:bg-blue-50 hover:text-water-dark transition-all duration-200 group/item"
+                        >
+                          <div className="text-water-dark group-hover/item:scale-110 transition-transform">
+                            {service.icon}
+                          </div>
+                          <span className="font-medium">{service.name}</span>
+                        </Link>
+                      ))}
+                    </div>
+                    <div className="bg-gradient-to-r from-blue-600 to-cyan-500 p-4 text-white">
+                      <p className="text-xs font-semibold mb-1">Need Help Choosing?</p>
+                      <Link to="/contact" className="text-xs hover:underline">Contact our experts →</Link>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`relative text-xs md:text-sm font-medium transition-all duration-300 group ${
                     location.pathname === link.path
-                      ? 'scale-x-100'
-                      : 'scale-x-0 group-hover:scale-x-100'
+                      ? 'text-water-dark font-semibold'
+                      : 'text-gray-700 hover:text-water-dark'
                   }`}
-                ></span>
-              </Link>
+                >
+                  {link.name}
+                  <span
+                    className={`absolute -bottom-1 left-0 w-full h-0.5 bg-water-dark transform origin-left transition-transform duration-300 ${
+                      location.pathname === link.path
+                        ? 'scale-x-100'
+                        : 'scale-x-0 group-hover:scale-x-100'
+                    }`}
+                  ></span>
+                </Link>
+              )
             ))}
             <Link
               to="/contact"
@@ -96,18 +160,45 @@ const Navbar = () => {
               <div className="flex-1 overflow-y-auto p-6">
                 <div className="flex flex-col space-y-1">
                   {navLinks.map((link) => (
-                    <Link
-                      key={link.path}
-                      to={link.path}
-                      onClick={() => setIsOpen(false)}
-                      className={`px-4 py-2 rounded-lg text-sm md:text-base font-medium transition-all duration-300 ${
-                        location.pathname === link.path
-                          ? 'bg-water-dark text-white'
-                          : 'text-gray-700 hover:bg-gray-100 hover:text-water-dark'
-                      }`}
-                    >
-                      {link.name}
-                    </Link>
+                    link.hasDropdown ? (
+                      <div key={link.path}>
+                        <button
+                          onClick={() => setServicesOpen(!servicesOpen)}
+                          className="w-full flex items-center justify-between px-4 py-2 rounded-lg text-sm md:text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-water-dark transition-all duration-300"
+                        >
+                          {link.name}
+                          <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${servicesOpen ? 'rotate-180' : ''}`} />
+                        </button>
+                        {servicesOpen && (
+                          <div className="ml-4 mt-1 space-y-1">
+                            {servicesList.map((service) => (
+                              <Link
+                                key={service.path}
+                                to={service.path}
+                                onClick={() => setIsOpen(false)}
+                                className="flex items-center gap-2 px-4 py-2 rounded-lg text-xs md:text-sm text-gray-600 hover:bg-blue-50 hover:text-water-dark transition-all duration-200"
+                              >
+                                {service.icon}
+                                {service.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <Link
+                        key={link.path}
+                        to={link.path}
+                        onClick={() => setIsOpen(false)}
+                        className={`px-4 py-2 rounded-lg text-sm md:text-base font-medium transition-all duration-300 ${
+                          location.pathname === link.path
+                            ? 'bg-water-dark text-white'
+                            : 'text-gray-700 hover:bg-gray-100 hover:text-water-dark'
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                    )
                   ))}
                 </div>
                 

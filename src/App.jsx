@@ -9,6 +9,16 @@ import HowItWorks from './pages/HowItWorks';
 import Calculator from './pages/Calculator';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+import Services from './pages/Services';
+import RainwaterHarvesting from './pages/services/RainwaterHarvesting';
+import GraywaterReuse from './pages/services/GraywaterReuse';
+import DrainageSolutions from './pages/services/DrainageSolutions';
+import GutterInstallation from './pages/services/GutterInstallation';
+import ServiceMaintainInspect from './pages/services/ServiceMaintainInspect';
+import IrrigationSystems from './pages/services/IrrigationSystems';
+import LandscapeInstallation from './pages/services/LandscapeInstallation';
+import WellTankPumpSystems from './pages/services/WellTankPumpSystems';
+import FireProtectionWaterStorage from './pages/services/FireProtectionWaterStorage';
 import './App.css';
 
 function ScrollToTop() {
@@ -35,6 +45,16 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/rainwater-harvesting" element={<RainwaterHarvesting />} />
+            <Route path="/services/graywater-reuse" element={<GraywaterReuse />} />
+            <Route path="/services/drainage-solutions" element={<DrainageSolutions />} />
+            <Route path="/services/gutter-installation" element={<GutterInstallation />} />
+            <Route path="/services/service-maintain-inspect" element={<ServiceMaintainInspect />} />
+            <Route path="/services/irrigation-systems" element={<IrrigationSystems />} />
+            <Route path="/services/landscape-installation" element={<LandscapeInstallation />} />
+            <Route path="/services/well-tank-pump-systems" element={<WellTankPumpSystems />} />
+            <Route path="/services/fire-protection-water-storage" element={<FireProtectionWaterStorage />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/calculator" element={<Calculator />} />
