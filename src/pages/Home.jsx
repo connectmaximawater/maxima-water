@@ -183,75 +183,85 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Image Slider */}
-      <section className="relative h-[500px] md:h-[700px] overflow-hidden">
-        <div className="relative h-full flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-        {heroSlides.map((slide, index) => (
-          <div
-            key={index}
-            className="min-w-full h-full flex-shrink-0 relative"
-          >
-            <img
-              src={slide.image}
-              alt={slide.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30"></div>
-            
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="max-w-5xl mx-auto px-4 md:px-6 text-center text-white">
-                <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight">
-                  {slide.title}
-                </h1>
-                <p className="text-xl md:text-3xl text-cyan-200 mb-4 font-semibold">
-                  {slide.subtitle}
-                </p>
-                <p className="text-base md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
-                  {slide.description}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    to={slide.link}
-                    className="inline-flex items-center justify-center bg-white text-blue-600 px-6 md:px-10 py-3 md:py-4 rounded-lg font-semibold text-sm md:text-lg hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:scale-105"
-                  >
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
-                  </Link>
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center justify-center bg-blue-600 text-white px-6 md:px-10 py-3 md:py-4 rounded-lg font-semibold text-sm md:text-lg hover:bg-blue-700 transition-all shadow-lg"
-                  >
-                    <Phone className="h-4 w-4 md:h-5 md:w-5 mr-2" />
-                    Book Free Site Visit
-                  </Link>
-                </div>
-              </div>
+      <section className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
+        <div className="absolute inset-0">
+          {heroSlides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                index === currentSlide 
+                  ? 'opacity-100 translate-x-0' 
+                  : index < currentSlide 
+                    ? 'opacity-0 -translate-x-full' 
+                    : 'opacity-0 translate-x-full'
+              }`}
+            >
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20"></div>
             </div>
-          </div>
-        ))}
+          ))}
         </div>
 
-        {/* Slider Controls */}
+        {/* Slider Content */}
+        <div className="relative h-full flex items-center justify-center">
+          <div className="text-center text-white px-4 sm:px-6 max-w-5xl">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight transition-all duration-500">
+              {heroSlides[currentSlide].title}
+            </h1>
+            <p className="text-base sm:text-lg md:text-2xl lg:text-3xl text-cyan-200 mb-2 sm:mb-3 md:mb-4 font-semibold transition-all duration-500">
+              {heroSlides[currentSlide].subtitle}
+            </p>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-4 sm:mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed transition-all duration-500">
+              {heroSlides[currentSlide].description}
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+              <Link
+                to={heroSlides[currentSlide].link}
+                className="inline-flex items-center justify-center bg-white text-blue-600 px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-lg font-semibold text-sm md:text-base hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                Learn More
+                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center bg-blue-600/90 backdrop-blur-sm text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-lg font-semibold text-sm md:text-base hover:bg-blue-600 transition-all border border-white/20"
+              >
+                <Phone className="h-4 w-4 md:h-5 md:w-5 mr-2" />
+                Book Free Site Visit
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all z-10"
+          className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-2 md:p-3 rounded-full transition-all border border-white/20"
         >
-          <ChevronLeft className="h-6 w-6" />
+          <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all z-10"
+          className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-2 md:p-3 rounded-full transition-all border border-white/20"
         >
-          <ChevronRight className="h-6 w-6" />
+          <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
         </button>
 
-        {/* Slider Dots */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        {/* Dots Indicator */}
+        <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
           {heroSlides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+              className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
+                index === currentSlide 
+                  ? 'bg-white w-8 md:w-12' 
+                  : 'bg-white/50 hover:bg-white/75'
               }`}
             />
           ))}
