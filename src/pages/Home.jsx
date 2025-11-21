@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Droplets, 
@@ -7,234 +8,325 @@ import {
   Award,
   CheckCircle2,
   ArrowRight,
-  Zap,
-  Clock,
   Phone,
-  Calculator,
-  ThumbsUp,
+  ChevronLeft,
+  ChevronRight,
+  Recycle,
+  Home as HomeIcon,
+  Building,
+  Settings,
+  Sprout,
+  Wrench,
+  CloudRain,
   Users,
-  Settings
+  DollarSign,
+  Zap
 } from 'lucide-react';
 
 const Home = () => {
-  const benefits = [
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroSlides = [
     {
-      icon: <TrendingDown className="h-10 w-10" />,
-      title: 'Save 30-60% Water Bills',
-      description: 'Reduce dependency on municipal water and cut costs significantly.',
+      image: "https://ik.imagekit.io/xpwuob8jo/Images/Maxima%20Water%20Images.png",
+      title: "Rainwater Harvesting Systems",
+      subtitle: "Save 40-60% on Water Bills | Secure Your Water Future",
+      description: "Professional rainwater harvesting solutions for homes, apartments, and commercial buildings",
+      link: "/services/rainwater-harvesting"
     },
     {
-      icon: <Clock className="h-10 w-10" />,
-      title: '24/7 Water Availability',
-      description: 'Never worry about water shortages with automatic dual-source switching.',
+      image: "https://ik.imagekit.io/xpwuob8jo/Images/Graywater%20Reuse%20Systems.png",
+      title: "Graywater Reuse Systems",
+      subtitle: "Recycle 50% of Your Household Water",
+      description: "Capture water from showers, sinks, and washing machines for outdoor irrigation",
+      link: "/services/graywater-reuse"
     },
     {
-      icon: <Leaf className="h-10 w-10" />,
-      title: 'Eco-Friendly Solution',
-      description: 'Sustainable, low maintenance, and environmentally responsible.',
+      image: "https://ik.imagekit.io/xpwuob8jo/Images/Drip%20Irrigation.png",
+      title: "Smart Irrigation Systems",
+      subtitle: "Save 50-70% Water with Precision Irrigation",
+      description: "Drip, sprinkle, and micro irrigation solutions for efficient water management",
+      link: "/services/irrigation-systems"
     },
     {
-      icon: <Award className="h-10 w-10" />,
-      title: 'Government Incentives',
-      description: 'Qualify for subsidies and comply with regulations.',
+      image: "https://ik.imagekit.io/xpwuob8jo/Images/Design%20Garden%20an%20planning.png",
+      title: "Landscape Installation",
+      subtitle: "Transform Your Outdoor Spaces",
+      description: "Complete landscaping services from design to installation with sustainable practices",
+      link: "/services/landscape-installation"
     },
+    {
+      image: "https://ik.imagekit.io/xpwuob8jo/Images/Rainwater%20Harvesting%20System%20Service%20and%20Maintenance.png",
+      title: "Service & Maintenance",
+      subtitle: "Keep Your Water Systems Running Perfectly",
+      description: "Comprehensive inspection, maintenance, and repair services for all water systems",
+      link: "/services/service-maintain-inspect"
+    }
   ];
 
-  const solutions = [
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
+
+  const services = [
     {
-      title: 'Apartment Rainwater Harvesting',
-      description: 'Complete RWH systems for multi-story residential buildings',
-      image: '🏢',
+      icon: <Droplets className="h-10 w-10" />,
+      title: "Rainwater Harvesting",
+      description: "Capture rainfall from rooftops for storage and reuse. Save 40-60% on water bills annually.",
+      benefits: ["56,000+ gallons/year potential", "10-year system warranty", "ROI in 3-7 years"],
+      link: "/services/rainwater-harvesting",
+      image: "https://ik.imagekit.io/xpwuob8jo/Images/Maxima%20Water%20Images.png"
     },
     {
-      title: 'Individual House System',
-      description: 'Customized solutions for independent homes and villas',
-      image: '🏠',
+      icon: <Recycle className="h-10 w-10" />,
+      title: "Graywater Reuse",
+      description: "Recycle water from showers, sinks, and washing machines for outdoor irrigation use.",
+      benefits: ["50% water recovery", "Climate-independent source", "5-year typical ROI"],
+      link: "/services/graywater-reuse",
+      image: "https://ik.imagekit.io/xpwuob8jo/Images/Graywater%20Reuse%20Systems.png"
     },
     {
-      title: 'Automatic Flush Switching',
-      description: 'Smart auto-switch between rainwater and municipal supply',
-      image: '⚡',
+      icon: <Sprout className="h-10 w-10" />,
+      title: "Irrigation Systems",
+      description: "Precision drip, sprinkle, and micro irrigation for gardens, lawns, and landscapes.",
+      benefits: ["50-70% water savings", "Automated control systems", "Healthier plant growth"],
+      link: "/services/irrigation-systems",
+      image: "https://ik.imagekit.io/xpwuob8jo/Images/Drip%20Irrigation.png"
     },
     {
-      title: 'Water Quality Filtration',
-      description: 'Advanced filtration for safe, clean water usage',
-      image: '💧',
+      icon: <HomeIcon className="h-10 w-10" />,
+      title: "Landscape Installation",
+      description: "Complete landscaping from garden design, lawn installation, to hardscaping projects.",
+      benefits: ["Custom design plans", "Native plant selection", "5-year warranty"],
+      link: "/services/landscape-installation",
+      image: "https://ik.imagekit.io/xpwuob8jo/Images/Design%20Garden%20an%20planning.png"
     },
+    {
+      icon: <CloudRain className="h-10 w-10" />,
+      title: "Gutter Installation",
+      description: "Seamless custom gutter systems for optimal water collection and property protection.",
+      benefits: ["Custom fabrication", "10-year warranty", "Leak-proof design"],
+      link: "/services/gutter-installation",
+      image: "https://ik.imagekit.io/xpwuob8jo/Images/Hardscaping.png"
+    },
+    {
+      icon: <Settings className="h-10 w-10" />,
+      title: "Service & Maintenance",
+      description: "Comprehensive inspection, maintenance, and repair services for all water systems.",
+      benefits: ["24/7 support available", "Annual maintenance contracts", "98% client satisfaction"],
+      link: "/services/service-maintain-inspect",
+      image: "https://ik.imagekit.io/xpwuob8jo/Images/Rainwater%20Harvesting%20System%20Service%20and%20Maintenance.png"
+    }
   ];
 
   const whyChooseUs = [
-    'Government-approved methods and compliance',
-    '100% quality materials with warranty',
-    'Expert installation by certified professionals',
-    '24/7 customer support and maintenance',
-    'Free site inspection and consultation',
-    'Transparent pricing with no hidden costs',
+    {
+      icon: <Award className="h-8 w-8" />,
+      title: "300+ Systems Installed",
+      description: "Proven track record across residential and commercial projects in Nellore region"
+    },
+    {
+      icon: <Shield className="h-8 w-8" />,
+      title: "100% Quality Guarantee",
+      description: "Premium materials with comprehensive warranties on all installations"
+    },
+    {
+      icon: <Users className="h-8 w-8" />,
+      title: "Expert Team",
+      description: "Licensed engineers and certified installation professionals"
+    },
+    {
+      icon: <DollarSign className="h-8 w-8" />,
+      title: "Transparent Pricing",
+      description: "No hidden costs, clear upfront quotes, competitive market rates"
+    }
   ];
 
-  const testimonials = [
+  const benefits = [
     {
-      name: 'Rajesh Kumar',
-      location: 'Green Valley Apartments, Bangalore',
-      text: 'Our water bills dropped by 45% after installation. The automatic switching works perfectly!',
-      rating: 5,
+      icon: <TrendingDown className="h-12 w-12" />,
+      title: "Massive Water Savings",
+      stat: "40-60%",
+      description: "Reduce water bills and consumption significantly"
     },
     {
-      name: 'Priya Sharma',
-      location: 'Villa Owner, Hyderabad',
-      text: 'Professional service from start to finish. We now have water even during summer months.',
-      rating: 5,
+      icon: <Leaf className="h-12 w-12" />,
+      title: "Environmental Impact",
+      stat: "50%",
+      description: "Lower your environmental water footprint"
     },
     {
-      name: 'Apartment Association',
-      location: 'Palm Residency, Chennai',
-      text: 'Best investment for our 120-unit complex. Residents are extremely satisfied.',
-      rating: 5,
+      icon: <Zap className="h-12 w-12" />,
+      title: "Quick ROI Period",
+      stat: "3-7 Years",
+      description: "System investment pays for itself"
     },
-  ];
-
-  const howItWorksSteps = [
-    { step: 'Collect', icon: '☔', desc: 'Rainwater from rooftop' },
-    { step: 'Filter', icon: '🔄', desc: 'Remove debris & impurities' },
-    { step: 'Store', icon: '🪣', desc: 'In underground/overhead tank' },
-    { step: 'Auto Switch', icon: '⚙️', desc: 'Smart valve control' },
-    { step: 'Use', icon: '💦', desc: 'For flush, gardening, etc.' },
+    {
+      icon: <Shield className="h-12 w-12" />,
+      title: "Water Security",
+      stat: "365 Days",
+      description: "Year-round reliable water availability"
+    }
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Banner */}
-      <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-500">
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
-          <div>
-            <h1 className="text-2xl md:text-5xl font-bold text-white mb-6 text-shadow">
-              Smart Rainwater Harvesting
-              <br />
-              <span className="text-cyan-200">for Apartments & Homes</span>
-            </h1>
-            <p className="text-base md:text-2xl text-gray-100 mb-4 font-semibold">
-              Save 30–60% on Water Bills
-            </p>
-            <p className="text-sm md:text-lg text-gray-200 mb-8 max-w-3xl mx-auto">
-              Automatic switching between rainwater & normal water supply. Never run out of water again!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                to="/contact"
-                className="bg-white text-blue-900 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-cyan-200 transition-all duration-300 shadow-lg flex items-center group"
-              >
-                <Phone className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                Get Free Site Inspection
-                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              {/* <Link
-                to="/calculator"
-                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300 shadow-lg flex items-center"
-              >
-                <Calculator className="mr-2 h-5 w-5" />
-                Calculate Savings
-              </Link> */}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-xl md:text-4xl font-semibold text-gray-900 mb-4">
-              Why Rainwater <span className="text-water-dark">Harvesting?</span>
-            </h2>
-            <p className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto">
-              Experience the benefits of sustainable water management
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-gray-50 to-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-gray-100 hover:border-water-light group"
-              >
-                <div className="text-water-dark mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {benefit.icon}
-                </div>
-                <h3 className="text-sm md:text-lg font-semibold text-gray-900 mb-3">{benefit.title}</h3>
-                <p className="text-xs md:text-sm text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works - Short Graphic */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-xl md:text-4xl font-semibold text-gray-900 mb-4">
-              How It <span className="text-water-dark">Works</span>
-            </h2>
-            <p className="text-xs md:text-base text-gray-600">Simple, automated, and efficient</p>
-          </div>
-
-          <div className="flex flex-wrap justify-center items-center gap-4">
-            {howItWorksSteps.map((item, index) => (
-              <div key={index} className="flex items-center">
-                <div className="text-center">
-                  <div className="bg-white rounded-full w-24 h-24 md:w-32 md:h-32 flex flex-col items-center justify-center shadow-lg border-2 md:border-4 border-water-light">
-                    <div className="text-4xl md:text-5xl mb-2">{item.icon}</div>
-                    <div className="text-xs md:text-sm font-bold text-gray-900">{item.step}</div>
-                  </div>
-                  <p className="text-xs md:text-sm text-gray-600 mt-2 max-w-[120px]">{item.desc}</p>
-                </div>
-                {index < howItWorksSteps.length - 1 && (
-                  <ArrowRight className="h-6 w-6 md:h-8 md:w-8 text-water-dark mx-2 hidden md:block" />
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link
-              to="/how-it-works"
-              className="inline-flex items-center text-water-dark font-semibold text-sm md:text-lg hover:text-water-light transition-colors"
-            >
-              Learn More About The Process
-              <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Solutions We Offer */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-xl md:text-4xl font-semibold text-gray-900 mb-4">
-              Solutions We <span className="text-water-dark">Offer</span>
-            </h2>
-            <p className="text-xs md:text-base text-gray-600 max-w-2xl mx-auto">
-              Tailored rainwater harvesting systems for every need
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {solutions.map((solution, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
-              >
-                <div className="text-5xl md:text-6xl mb-4 text-center">{solution.image}</div>
-                <h3 className="text-sm md:text-lg font-semibold text-gray-900 mb-3 text-center">{solution.title}</h3>
-                <p className="text-xs md:text-sm text-gray-600 text-center">{solution.description}</p>
-                <div className="mt-6 text-center">
+    <div className="min-h-screen bg-white">
+      {/* Hero Image Slider */}
+      <section className="relative h-[500px] md:h-[700px] overflow-hidden">
+        <div className="relative h-full flex transition-transform duration-700 ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+        {heroSlides.map((slide, index) => (
+          <div
+            key={index}
+            className="min-w-full h-full flex-shrink-0 relative"
+          >
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30"></div>
+            
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="max-w-5xl mx-auto px-4 md:px-6 text-center text-white">
+                <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight">
+                  {slide.title}
+                </h1>
+                <p className="text-xl md:text-3xl text-cyan-200 mb-4 font-semibold">
+                  {slide.subtitle}
+                </p>
+                <p className="text-base md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                  {slide.description}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
-                    to="/solutions"
-                    className="text-water-dark font-semibold hover:text-water-light transition-colors inline-flex items-center"
+                    to={slide.link}
+                    className="inline-flex items-center justify-center bg-white text-blue-600 px-6 md:px-10 py-3 md:py-4 rounded-lg font-semibold text-sm md:text-lg hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:scale-105"
                   >
                     Learn More
-                    <ArrowRight className="ml-2 h-3 w-3 md:h-4 md:w-4" />
+                    <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center justify-center bg-blue-600 text-white px-6 md:px-10 py-3 md:py-4 rounded-lg font-semibold text-sm md:text-lg hover:bg-blue-700 transition-all shadow-lg"
+                  >
+                    <Phone className="h-4 w-4 md:h-5 md:w-5 mr-2" />
+                    Book Free Site Visit
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+        </div>
+
+        {/* Slider Controls */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all z-10"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all z-10"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </button>
+
+        {/* Slider Dots */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+              }`}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Key Benefits Section */}
+      <section className="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
+              Why Choose Water Conservation?
+            </h2>
+            <p className="text-sm md:text-lg text-gray-600 max-w-3xl mx-auto">
+              Make the smart investment in sustainable water management today
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all text-center">
+                <div className="text-blue-600 flex justify-center mb-4">
+                  {benefit.icon}
+                </div>
+                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">{benefit.stat}</div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
+                <p className="text-sm text-gray-600">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Services Section */}
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
+              Our Water Management Services
+            </h2>
+            <p className="text-sm md:text-lg text-gray-600 max-w-3xl mx-auto">
+              Comprehensive solutions for residential, commercial, and industrial water needs
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all border border-gray-100">
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="text-blue-600 mb-4">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
+                  <ul className="space-y-2 mb-6">
+                    {service.benefits.map((benefit, idx) => (
+                      <li key={idx} className="flex items-start text-sm text-gray-700">
+                        <CheckCircle2 className="h-4 w-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    to={service.link}
+                    className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+                  >
+                    View Details
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </div>
               </div>
@@ -243,91 +335,137 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-500 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-xl md:text-4xl font-semibold mb-4">
-              Why Choose <span className="text-cyan-200">Maxima Water?</span>
+      {/* Why Choose Maxima Water */}
+      <section className="py-12 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
+              Why Choose Maxima Water?
             </h2>
-            <p className="text-xs md:text-base text-gray-100 max-w-2xl mx-auto">
-              Your trusted partner in water conservation
+            <p className="text-sm md:text-lg text-gray-600 max-w-3xl mx-auto">
+              Your trusted partner for water conservation in Nellore, India
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {whyChooseUs.map((reason, index) => (
-              <div
-                key={index}
-                className="flex items-start space-x-3 md:space-x-4 bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-xl"
-              >
-                <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-cyan-200 flex-shrink-0 mt-1" />
-                <span className="text-xs md:text-sm text-gray-100">{reason}</span>
+              <div key={index} className="bg-white rounded-xl p-6 md:p-8 shadow-lg hover:shadow-xl transition-all text-center">
+                <div className="text-blue-600 flex justify-center mb-4">
+                  {reason.icon}
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">{reason.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{reason.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-xl md:text-4xl font-semibold text-gray-900 mb-4">
-              What Our <span className="text-water-dark">Clients Say</span>
-            </h2>
-            <p className="text-xs md:text-base text-gray-600">Real experiences from satisfied customers</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-xl md:text-2xl">★</span>
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
-                <div className="border-t pt-4">
-                  <p className="font-bold text-gray-900">{testimonial.name}</p>
-                  <p className="text-xs md:text-sm text-gray-600">{testimonial.location}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-500">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div>
-            <h2 className="text-xl md:text-4xl font-semibold text-white mb-6">
-              Ready to Save Water & Money?
-            </h2>
-            <p className="text-xs md:text-base text-gray-100 mb-8">
-              Book a free on-site visit and get a customized quote today
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      {/* About Maxima Water Brief */}
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 md:px-6">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div>
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
+                About Maxima Water
+              </h2>
+              <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
+                Maxima Water is Nellore's premier water management solutions provider, specializing in rainwater harvesting, graywater reuse, irrigation systems, and complete landscaping services.
+              </p>
+              <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+                With over 300 successful installations across residential and commercial projects, we deliver sustainable water solutions that reduce costs, conserve resources, and ensure year-round water availability.
+              </p>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Licensed engineers and certified professionals</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Complete design, installation, and maintenance services</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Premium quality materials with comprehensive warranties</span>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle2 className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">Transparent pricing and 24/7 customer support</span>
+                </li>
+              </ul>
               <Link
-                to="/contact"
-                className="inline-flex items-center bg-white text-blue-900 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-cyan-200 transition-all duration-300 shadow-lg group"
+                to="/about"
+                className="inline-flex items-center text-blue-600 font-semibold text-lg hover:text-blue-700 transition-colors"
               >
-                <Phone className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                Book Free Site Visit
-                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
+                Learn More About Us
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-              <a
-                href="https://wa.me/916300225335"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-green-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-green-600 transition-all duration-300 shadow-lg"
-              >
-                WhatsApp Us
-              </a>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <img 
+                src="https://ik.imagekit.io/xpwuob8jo/Images/Lawn%20Installation.png"
+                alt="Landscape Services"
+                className="rounded-xl shadow-lg w-full h-48 object-cover"
+              />
+              <img 
+                src="https://ik.imagekit.io/xpwuob8jo/Images/Rain%20Garden.png"
+                alt="Rain Gardens"
+                className="rounded-xl shadow-lg w-full h-48 object-cover mt-8"
+              />
+              <img 
+                src="https://ik.imagekit.io/xpwuob8jo/Images/Sprinkle%20Irrigation.png"
+                alt="Irrigation Systems"
+                className="rounded-xl shadow-lg w-full h-48 object-cover -mt-8"
+              />
+              <img 
+                src="https://ik.imagekit.io/xpwuob8jo/Images/Outdoor%20lighting.png"
+                alt="Outdoor Lighting"
+                className="rounded-xl shadow-lg w-full h-48 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-12 md:py-20 bg-gradient-to-br from-blue-600 via-cyan-600 to-blue-700 text-white">
+        <div className="max-w-5xl mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-2xl md:text-5xl font-bold mb-4 md:mb-6">
+            Ready to Start Saving Water & Money?
+          </h2>
+          <p className="text-base md:text-xl text-blue-100 mb-6 md:mb-10 max-w-3xl mx-auto leading-relaxed">
+            Get a free site inspection and discover how much you can save with our water management solutions. Our team will design a custom system tailored to your needs.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center bg-white text-blue-600 px-6 md:px-10 py-3 md:py-4 rounded-lg font-semibold text-sm md:text-lg hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+            >
+              Book Free Site Visit
+              <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+            </Link>
+            <a
+              href="tel:+916300225335"
+              className="inline-flex items-center justify-center bg-blue-500/20 backdrop-blur-sm text-white px-6 md:px-10 py-3 md:py-4 rounded-lg font-semibold text-sm md:text-lg hover:bg-blue-500/30 transition-all border border-white/20"
+            >
+              <Phone className="h-4 w-4 md:h-5 md:w-5 mr-2" />
+              Call Now: +91 6300 225 335
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <p className="text-3xl md:text-4xl font-bold mb-2">300+</p>
+              <p className="text-blue-100">Projects Completed</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <p className="text-3xl md:text-4xl font-bold mb-2">100%</p>
+              <p className="text-blue-100">Quality Guaranteed</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <p className="text-3xl md:text-4xl font-bold mb-2">24/7</p>
+              <p className="text-blue-100">Customer Support</p>
             </div>
           </div>
         </div>
