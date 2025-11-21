@@ -19,6 +19,7 @@ import IrrigationSystems from './pages/services/IrrigationSystems';
 import LandscapeInstallation from './pages/services/LandscapeInstallation';
 import WellTankPumpSystems from './pages/services/WellTankPumpSystems';
 import FireProtectionWaterStorage from './pages/services/FireProtectionWaterStorage';
+import NotFound from './pages/NotFound';
 import './App.css';
 
 function ScrollToTop() {
@@ -60,6 +61,7 @@ function App() {
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />
