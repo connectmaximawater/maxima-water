@@ -24,7 +24,7 @@ const RainwaterHarvesting = () => {
       {/* Hero Image Section */}
       <section className="relative h-[400px] md:h-[600px] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1534237886190-ced735ca4b73?w=1920&h=1080&fit=crop"
+          src="https://ik.imagekit.io/xpwuob8jo/Images/Maxima%20Water%20Images.png"
           alt="Rainwater Harvesting System"
           className="w-full h-full object-cover"
         />
